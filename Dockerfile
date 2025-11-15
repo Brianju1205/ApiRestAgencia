@@ -13,7 +13,7 @@ RUN mvn clean install -DskipTests
 
 
 # Etapa 2: Crear la imagen final de ejecuci�n (m�s ligera)
-FROM eclipse-temurin:17-jre-slim
+FROM amazoncorretto:17-alpine-jre
 
 # Establecer el directorio de trabajo
 WORKDIR /app
