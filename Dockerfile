@@ -13,7 +13,7 @@ RUN mvn clean install -DskipTests
 
 
 # Etapa 2: Crear la imagen final de ejecuci�n (m�s ligera)
-FROM amazoncorretto:17-alpine-jre
+FROM amazoncorretto:17-jre-alpine
 
 # Establecer el directorio de trabajo
 WORKDIR /app
