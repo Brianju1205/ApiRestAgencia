@@ -13,7 +13,7 @@ RUN mvn clean install -DskipTests
 
 
 # Etapa 2: Crear la imagen final de ejecuci�n (m�s ligera)
-FROM bellsoft/liberica-openjdk-jre:17-alpine
+FROM openjdk:17-jdk-slim
 
 # Establecer el directorio de trabajo
 WORKDIR /app
