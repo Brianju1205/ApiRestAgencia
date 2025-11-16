@@ -45,7 +45,7 @@ public class AgenciaController {
     @DeleteMapping("/auto/{NoSerie}")
     public ResponseEntity<Void> deleteAuto(@PathVariable String NoSerie) {
         if (!autoRepository.existsById(NoSerie)) {
-            // Si no existe, devuelve 404 Not Found
+            
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         autoRepository.deleteById(NoSerie);
