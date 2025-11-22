@@ -59,4 +59,31 @@ public class AutoController {
         List<Auto> autos = autoRepository.findAutosByPrecioMayorA(varprecio);
         return new ResponseEntity<>(autos, HttpStatus.OK);
     }
+
+    /**
+     * GET /api/autos/modelo/{mod}
+     */
+    @GetMapping("/autos/modelo/{mod}")
+    public ResponseEntity<List<Auto>> getAutosByModelo(@PathVariable Integer mod) {
+        List<Auto> autos = autoRepository.findByModelo(mod);
+        return new ResponseEntity<>(autos, HttpStatus.OK);
+    }
+
+    /**
+     * GET /api/autos/modelomenor/{a}
+     */
+    @GetMapping("/autos/modelomenor/{a}")
+    public ResponseEntity<List<Auto>> getAutosByModeloMenor(@PathVariable Integer a) {
+        List<Auto> autos = autoRepository.findByModeloLessThan(a);
+        return new ResponseEntity<>(autos, HttpStatus.OK);
+    }
+
+    /**
+     * GET /api/auto/pais/{pais}
+     */
+    @GetMapping("/auto/pais/{pais}")
+    public ResponseEntity<List<Auto>> getAutosByPais(@PathVariable String pais) {
+        List<Auto> autos = autoRepository.findAutosByPais(pais);
+        return new ResponseEntity<>(autos, HttpStatus.OK);
+    }
 }
